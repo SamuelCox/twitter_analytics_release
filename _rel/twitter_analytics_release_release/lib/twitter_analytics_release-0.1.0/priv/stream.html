@@ -1,0 +1,40 @@
+<head>
+    <title> Twitter Stream Analytics </title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="Site.css">
+    <script src="/static/jquery.min.js"></script>
+    <script src="visualise.js"></script>
+
+    <script>
+
+    var ws;
+    $(document).ready(connect);
+
+    function connect() {
+        var url = "ws:://dove.kent.ac.uk:8080/websocket";
+        var ws = new WebSocket(url);
+        ws.onmessage = function(event) { receive(event)};
+        ws.send("Connect");
+    }
+
+    function receive(event) {
+        var json = JSON.parse(event);
+        
+
+    }
+
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="analytics.html">Search Analytics</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="stream.html">Stream Analytics</a>
+            </li>            
+        </ul>
+    </nav>
+</body>
