@@ -12,7 +12,7 @@ test_map(Runs) ->
     {PTime, _} = timer:tc(putils, p_map, [Func,Return]),
     {STime, _} = timer:tc(lists, map, [Func, Return]),    
 
-    {PTime, PThousand, STime, SThousand}.
+    {PTime, STime}.
 
 
 
