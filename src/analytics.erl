@@ -102,6 +102,11 @@ get_highest_favorites(Tweets) ->
 
     
 
+%Sums two sentiment tuples.
+sum_two_sentiment(X, Y) ->
+    {element(1, X) + element(1, Y), element(2, X) + element(2, Y),
+    element(3, X) + element(3, Y)}.
+
 
 % A helper function to tail-recursively aggregate the sentiment_fold
 % of a list of sentiments.
